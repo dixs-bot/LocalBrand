@@ -29,3 +29,6 @@ Starter fullstack e-commerce sepatu dengan Next.js App Router, TypeScript, Tailw
 
 ## Penting
 Ini adalah fondasi implementasi yang perlu dikonfigurasi dan diuji pada project Supabase milik Anda sebelum menerima pembayaran/pesanan nyata. Transfer manual tetap memerlukan pemeriksaan manusia. Tambahkan aturan pengiriman, pajak/ongkir, kebijakan retur, dan pengujian keamanan sebelum production.
+
+## Tailwind CSS build dependency
+Project ini menggunakan Tailwind CSS v4. Dependency `tailwindcss` dan `@tailwindcss/postcss` sudah dicantumkan di `devDependencies` agar plugin PostCSS tersedia saat build di Vercel.
