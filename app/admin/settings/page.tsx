@@ -1,0 +1,2 @@
+import {createClient} from "@/lib/supabase/server";import SettingsForm from "./settings-form";
+export default async function Settings(){const sb=await createClient();const {data}=await sb.from("store_settings").select("*").limit(1).maybeSingle();return <main className="p-6 md:p-10"><p className="eyebrow">Store configuration</p><h1 className="mt-2 text-3xl">Store settings</h1><SettingsForm initial={data}/></main>}

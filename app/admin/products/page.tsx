@@ -1,0 +1,2 @@
+import {createClient} from "@/lib/supabase/server";import ProductAdmin from "./product-admin";
+export default async function Products(){const sb=await createClient();const {data}=await sb.from("products").select("id,name,slug,price,is_active,created_at").order("created_at",{ascending:false});return <main className="p-6 md:p-10"><p className="eyebrow">Catalog management</p><h1 className="mt-2 text-3xl">Products</h1><ProductAdmin initial={data||[]}/></main>}

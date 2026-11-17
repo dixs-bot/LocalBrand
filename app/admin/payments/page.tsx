@@ -1,0 +1,2 @@
+import {createClient} from "@/lib/supabase/server";import PaymentAdmin from "./payment-admin";
+export default async function Payments(){const sb=await createClient();const {data}=await sb.from("payments").select("id,order_id,user_id,proof_path,status,created_at,orders(order_number,total_amount)").order("created_at",{ascending:false});return <main className="p-6 md:p-10"><p className="eyebrow">Manual bank transfer</p><h1 className="mt-2 text-3xl">Payment verification</h1><PaymentAdmin rows={data||[]}/></main>}
